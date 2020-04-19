@@ -39,7 +39,7 @@ public class RegisteryLoader extends PluginBase {
     @SuppressWarnings("unused")
     private void settingsConfig() {
         this.getDataFolder().mkdirs(); // Create folder of DatabaseManagement
-        File file = new File(DBAPI.mainAPI.getDataFolder() + "/databases");
+        File file = new File(this.getDataFolder() + "/databases");
         file.mkdirs(); // Create folder where databases are supposed to be
         settingsAPI.init();
     }

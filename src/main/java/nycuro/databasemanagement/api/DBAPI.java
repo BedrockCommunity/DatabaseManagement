@@ -1,6 +1,5 @@
 package nycuro.databasemanagement.api;
 
-
 import cn.nukkit.utils.TextFormat;
 import nycuro.databasemanagement.RegisteryLoader;
 import nycuro.databasemanagement.config.SettingsAPI;
