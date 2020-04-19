@@ -1,0 +1,59 @@
+{
+  "itemsAbuse" : [ {
+    "namespace" : "minecraft",
+    "name" : "experience_bottle"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "iron_ingot"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "gold_ingot"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "diamond"
+  } ],
+  "blockAbuse" : [ {
+    "namespace" : "minecraft",
+    "name" : "iron_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "gold_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "coal_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "lapis_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "tnt"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "diamond_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "redstone_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "emerald_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "quartz_ore"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "lapis_block"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "gold_block"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "iron_block"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "diamond_block"
+  }, {
+    "namespace" : "minecraft",
+    "name" : "redstone_block"
+  } ],
+  "inventoryAbuse" : [ "DROPPER", "CHEST", "BREWING_STAND", "DISPENSER", "FURNACE", "DOUBLE_CHEST", "ENCHANT_TABLE", "CRAFTING", "WORKBENCH", "HOPPER", "ENDER_CHEST", "ANVIL" ]
+}
