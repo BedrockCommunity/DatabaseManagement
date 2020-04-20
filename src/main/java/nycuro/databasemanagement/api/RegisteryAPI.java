@@ -4,13 +4,15 @@ import cn.nukkit.utils.TextFormat;
 import nycuro.databasemanagement.RegisteryLoader;
 import nycuro.databasemanagement.config.SettingsAPI;
 
-public class DBAPI {
+public class RegisteryAPI {
 
     public static RegisteryLoader mainAPI;
 
     public static SettingsAPI settingsAPI;
 
-    public static void sendLog(String text) {
-        mainAPI.getLogger().info(TextFormat.colorize("&a" + text));
+    public static String prefix = "&7[&aDatabaseManagement&7]&r";
+
+    public static void sendLog(TextFormat color, String message) {
+        mainAPI.getLogger().info(TextFormat.colorize(prefix + " " + color + message));
     }
 }
