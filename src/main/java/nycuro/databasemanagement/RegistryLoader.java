@@ -4,11 +4,13 @@ import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.TextFormat;
 import nycuro.databasemanagement.api.RegistryAPI;
 import nycuro.databasemanagement.config.SettingsAPI;
+import nycuro.databasemanagement.databases.api.DatabaseAPI;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.Map;
 
-import static nycuro.databasemanagement.api.RegistryAPI.settingsAPI;
+import static nycuro.databasemanagement.api.RegistryAPI.*;
 
 public class RegistryLoader extends PluginBase {
 
@@ -24,6 +26,7 @@ public class RegistryLoader extends PluginBase {
     public void onEnable() {
         registerAPI();
         settingsConfig();
+        //createDatabases();
     }
 
     @Override
@@ -36,6 +39,7 @@ public class RegistryLoader extends PluginBase {
     private void registerAPI() {
         RegistryAPI.mainAPI = this;
         RegistryAPI.settingsAPI = new SettingsAPI();
+        RegistryAPI.databaseAPI = new DatabaseAPI();
     }
 
     private void settingsConfig() {
@@ -64,5 +68,25 @@ public class RegistryLoader extends PluginBase {
             RegistryAPI.sendLog(TextFormat.YELLOW, "Databases Folder already exists..");
         }
         settingsAPI.init();
+    }
+
+    private void createDatabases() {
+        Map<String, Boolean> usedDatabases = settingsAPI.dbSettingsObject.getUsedDatabases();
+        if (usedDatabases.get("SQLITE3")) {
+            Map<String, String> databaseType = settingsAPI.dbSettingsObject.getTypeDatabase();
+            Map<String, Integer> poolsize = settingsAPI.dbSettingsObject.getPoolsize();
+            for (Map.Entry<String, String> entries : databaseType.entrySet()) {
+                if (entries.getKey().equals("SQLITE3")) {
+                    databaseAPI.createDatabaseSQLITE(entries.getKey(), poolsize.get(entries.getKey()) /*, variables */);
+                }
+            }
+        }
+        if (usedDatabases.get("MYSQL")) {
+            Map<String, Map<String, String>> databaseOptions = settingsAPI.dbSettingsObject.getDatabaseOptions();
+            Map<String, Integer> poolsize = settingsAPI.dbSettingsObject.getPoolsize();
+            for (Map.Entry<String, Map<String, String>> entries : databaseOptions.entrySet()) {
+                databaseAPI.createDatabaseMYSQL(entries.getKey(), poolsize.get(entries.getKey()), entries.getValue() /*, variables */);
+            }
+        }
     }
 }

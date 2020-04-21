@@ -35,11 +35,11 @@ public class SettingsAPI {
 
                 FileWriter fileWriter = new FileWriter(file);
 
-                RegistryAPI.sendLog(TextFormat.YELLOW, "Setting Count of Databases...");
+                RegistryAPI.sendLog(TextFormat.YELLOW, "Setting Usage of Databases...");
 
-                Map<String, Integer> countDatabases = new HashMap<>();
-                countDatabases.put("SQLITE3", 1); // Default Values from config. 1 Database using SQLITE3
-                countDatabases.put("MySQL", 1); // Default Values from config. 1 Database using MySQL
+                Map<String, Boolean> used = new HashMap<>();
+                used.put("1", true); // Choose if database 1 is enabled or not.
+                used.put("2", true); // Choose if database 2 is enabled or not
 
                 RegistryAPI.sendLog(TextFormat.YELLOW, "Setting Type of Databases...");
 
@@ -58,6 +58,12 @@ public class SettingsAPI {
 
                 databaseOptions.put("2", options);
 
+                RegistryAPI.sendLog(TextFormat.YELLOW, "Setting Poolsize of Databases...");
+
+                Map<String, Integer> poolSizeOptions = new HashMap<>();
+                poolSizeOptions.put("1", 10);
+                poolSizeOptions.put("2", 10);
+
                 RegistryAPI.sendLog(TextFormat.YELLOW, "Setting Plugin Messages...");
 
                 Map<String, String> pluginMessages = new HashMap<>();
@@ -65,7 +71,7 @@ public class SettingsAPI {
 
                 RegistryAPI.sendLog(TextFormat.YELLOW, "Writing data...");
 
-                fileWriter.write(serializeData(countDatabases, databaseType, databaseOptions, pluginMessages));
+                fileWriter.write(serializeData(used, databaseType, databaseOptions, poolSizeOptions, pluginMessages));
                 fileWriter.close();
 
                 RegistryAPI.sendLog(TextFormat.GREEN, "Finished!");
@@ -80,31 +86,20 @@ public class SettingsAPI {
 
                 RegistryAPI.sendLog(TextFormat.YELLOW, "Creating maps..");
 
-                Map<String, Integer> countDatabases = new HashMap<>();
+                Map<String, Boolean> usedDatabases = new HashMap<>();
                 Map<String, String> typeDatabase = new HashMap<>();
                 Map<String, String> messages = new HashMap<>();
                 Map<String, Map<String, String>> databaseOptions = new HashMap<>();
                 Map<String, String> options = new HashMap<>();
+                Map<String, Integer> poolsize = new HashMap<>();
 
                 RegistryAPI.sendLog(TextFormat.YELLOW, "Input information..");
 
-                Iterator<Map.Entry<String, JsonNode>> jsonNodeTypeDatabase = rootNode.get("typeDatabase").fields();
-                int i = 0;
-                int j = 0;
+                Iterator<Map.Entry<String, JsonNode>> jsonNodeTypeDatabase = rootNode.get("usedDatabases").fields();
                 while (jsonNodeTypeDatabase.hasNext()) {
                     Map.Entry<String, JsonNode> entry = jsonNodeTypeDatabase.next();
-                    typeDatabase.put(entry.getKey(), entry.getValue().toString());
-                    if (entry.getValue().toString().contains("SQLITE3")) {
-                        /* Getting count of SQLITE3 databases from config. */
-                        i++;
-                    }
-                    if (entry.getValue().toString().contains("MySQL")) {
-                        /* Getting count of MySQL databases from config. */
-                        j++;
-                    }
+                    usedDatabases.put(entry.getKey(), entry.getValue().asBoolean());
                 }
-                countDatabases.put("SQLITE3", i);
-                countDatabases.put("MySQL", j);
 
                 Iterator<Map.Entry<String, JsonNode>> jsonNodeDatabaseOptions = rootNode.get("databaseOptions").fields();
                 while (jsonNodeDatabaseOptions.hasNext()) {
@@ -129,6 +124,19 @@ public class SettingsAPI {
                     databaseOptions.put(entry.getKey(), options);
                 }
 
+                Iterator<Map.Entry<String, JsonNode>> jsonNodePoolsize = rootNode.get("poolsize").fields();
+                while (jsonNodePoolsize.hasNext()) {
+                    Map.Entry<String, JsonNode> entry = jsonNodePoolsize.next();
+                    Iterator<Map.Entry<String, JsonNode>> iter = entry.getValue().fields();
+                    while (iter.hasNext()) {
+                        Map.Entry<String, JsonNode> entryValues = iter.next();
+                        poolsize.put(entryValues.getKey(), entryValues.getValue().asInt());
+                    }
+                }
+                for (Map.Entry<String, Integer> entry : poolsize.entrySet()) {
+                    RegistryAPI.sendLog(TextFormat.AQUA, "Poolsize: " + entry.getKey() + " " + entry.getValue());
+                }
+
                 Iterator<Map.Entry<String, JsonNode>> jsonNodeMessages = rootNode.get("messages").fields();
                 while (jsonNodeMessages.hasNext()) {
                     Map.Entry<String, JsonNode> entry = jsonNodeMessages.next();
@@ -137,7 +145,7 @@ public class SettingsAPI {
 
                 RegistryAPI.sendLog(TextFormat.YELLOW, "Add information to DBSettingsObject..");
 
-                dbSettingsObject = new DBSettingsObject(countDatabases, typeDatabase, databaseOptions, messages);
+                dbSettingsObject = new DBSettingsObject(usedDatabases, typeDatabase, databaseOptions, poolsize, messages);
 
                 RegistryAPI.sendLog(TextFormat.GREEN, "Done!");
             }
@@ -147,10 +155,10 @@ public class SettingsAPI {
     }
 
 
-    private String serializeData(Map<String, Integer> countDatabases, Map<String, String> typeDatabase, Map<String, Map<String, String>> databaseOptions, Map<String, String> messages) throws JsonProcessingException {
+    private String serializeData(Map<String, Boolean> usedDatabases, Map<String, String> typeDatabase, Map<String, Map<String, String>> databaseOptions, Map<String, Integer> poolsize, Map<String, String> messages) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
 
-        DBSettingsObject dbSettingsObject = new DBSettingsObject(countDatabases, typeDatabase, databaseOptions, messages);
+        DBSettingsObject dbSettingsObject = new DBSettingsObject(usedDatabases, typeDatabase, databaseOptions, poolsize, messages);
 
         return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(dbSettingsObject);
     }

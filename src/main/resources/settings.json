@@ -1,7 +1,7 @@
 {
-  "countDatabases" : {
-    "MySQL" : 1,
-    "SQLITE3" : 1
+  "usedDatabases" : {
+    "1" : true,
+    "2" : true
   },
   "typeDatabase" : {
     "1" : "SQLITE3",
@@ -14,6 +14,10 @@
       "adress" : "localhost",
       "username" : "username"
     }
+  },
+  "poolsize" : {
+    "1" : 10,
+    "2" : 10
   },
   "messages" : {
     "nycuro.prefix" : "&7[&aDatabaseManagement&7]&r"

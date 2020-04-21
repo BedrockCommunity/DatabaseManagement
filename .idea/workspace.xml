@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6aa59d6a-f8a7-451b-879c-714390213d8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/RegistryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/RegistryLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/api/RegistryAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/api/RegistryAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/SettingsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/SettingsAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/data/DBSettingsObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/data/DBSettingsObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/databases/api/DatabaseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/databases/api/DatabaseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,22 +66,22 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="739" y="308" width="426" height="479" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1587399126553" />
-    <state width="1874" height="280" key="GridCell.Tab.0.bottom" timestamp="1587507851472">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1587511728864">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="280" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1587507851472" />
-    <state width="1874" height="280" key="GridCell.Tab.0.center" timestamp="1587507851471">
+    <state width="1874" height="272" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1587511728864" />
+    <state width="1874" height="272" key="GridCell.Tab.0.center" timestamp="1587511728863">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="280" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1587507851471" />
-    <state width="1874" height="280" key="GridCell.Tab.0.left" timestamp="1587507851471">
+    <state width="1874" height="272" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1587511728863" />
+    <state width="1874" height="272" key="GridCell.Tab.0.left" timestamp="1587511728863">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="280" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1587507851471" />
-    <state width="1874" height="280" key="GridCell.Tab.0.right" timestamp="1587507851471">
+    <state width="1874" height="272" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1587511728863" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right" timestamp="1587511728864">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="280" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1587507851471" />
+    <state width="1874" height="272" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1587511728864" />
     <state x="460" y="185" width="1026" height="840" key="SettingsEditor" timestamp="1587506344872">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
