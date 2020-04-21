@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6aa59d6a-f8a7-451b-879c-714390213d8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/databases/api/DatabaseAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/databases/objects/DatabaseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/RegisteryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/RegisteryLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/api/DBAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/api/RegisteryAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/RegisteryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/RegistryLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/api/RegisteryAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/api/RegistryAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/SettingsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/SettingsAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/data/DBSettingsObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nycuro/databasemanagement/config/data/DBSettingsObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +60,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Cores" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -61,10 +79,23 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="739" y="308" width="426" height="479" key="FileChooserDialogImpl" timestamp="1587399126553">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="739" y="279" width="426" height="479" key="FileChooserDialogImpl" timestamp="1587498941084">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="739" y="279" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587498941084" />
     <state x="739" y="308" width="426" height="479" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1587399126553" />
     <state width="1874" height="272" key="GridCell.Tab.0.bottom" timestamp="1587400515248">
       <screen x="0" y="25" width="1920" height="1055" />
@@ -82,9 +113,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state width="1874" height="272" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1587400515248" />
-    <state x="460" y="185" width="1026" height="840" key="SettingsEditor" timestamp="1587395696509">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="460" y="158" width="1026" height="840" key="SettingsEditor" timestamp="1587498956320">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="460" y="158" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587498956320" />
     <state x="460" y="185" width="1026" height="840" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1587395696509" />
     <state x="625" y="377" key="com.intellij.ide.util.TipDialog" timestamp="1587297286496">
       <screen x="0" y="25" width="1920" height="1055" />

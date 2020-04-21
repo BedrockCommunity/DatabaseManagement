@@ -4,16 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Map;
-import java.util.Set;
 
 @Getter
 @Setter
+
 public class DBSettingsObject {
 
     /**
-     * The count of databases you want to have generate by plugin
+     * Count of databases
      */
-    protected int countDatabases;
+    protected Map<String, Integer> countDatabases;
 
     /**
      * The type of database. Actually only SQLITE3 and MySQL
@@ -30,7 +30,7 @@ public class DBSettingsObject {
      */
     protected Map<String, String> messages;
 
-    public DBSettingsObject(int countDatabases, Map<String, String> typeDatabase, Map<String, Map<String, String>> databaseOptions, Map<String, String> messages) {
+    public DBSettingsObject(Map<String, Integer> countDatabases, Map<String, String> typeDatabase, Map<String, Map<String, String>> databaseOptions, Map<String, String> messages) {
         this.countDatabases = countDatabases;
         this.typeDatabase = typeDatabase;
         this.messages = messages;

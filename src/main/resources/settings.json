@@ -4,7 +4,15 @@
     "1" : "SQLITE3",
     "2" : "MySQL"
   },
+  "databaseOptions" : {
+    "2" : {
+      "password" : "password",
+      "port" : "3306",
+      "adress" : "localhost",
+      "username" : "username"
+    }
+  },
   "messages" : {
-    "nycuro.prefix" : "&a[DatabaseManagement] "
+    "nycuro.prefix" : "&7[&aDatabaseManagement&7]&r"
   }
 }

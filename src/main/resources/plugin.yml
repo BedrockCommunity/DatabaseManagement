@@ -1,4 +1,4 @@
 name: ${project.artifactId}
-main: ${project.groupId}.RegisteryLoader
+main: ${project.groupId}.RegistryLoader
 version: ${project.version}
 api-version: ["2.0.0"]

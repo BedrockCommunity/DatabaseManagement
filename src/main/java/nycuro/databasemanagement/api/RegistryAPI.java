@@ -1,12 +1,12 @@
 package nycuro.databasemanagement.api;
 
 import cn.nukkit.utils.TextFormat;
-import nycuro.databasemanagement.RegisteryLoader;
+import nycuro.databasemanagement.RegistryLoader;
 import nycuro.databasemanagement.config.SettingsAPI;
 
-public class RegisteryAPI {
+public class RegistryAPI {
 
-    public static RegisteryLoader mainAPI;
+    public static RegistryLoader mainAPI;
 
     public static SettingsAPI settingsAPI;
 
