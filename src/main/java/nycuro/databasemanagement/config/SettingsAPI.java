@@ -109,9 +109,10 @@ public class SettingsAPI {
                 Iterator<Map.Entry<String, JsonNode>> jsonNodeDatabaseOptions = rootNode.get("databaseOptions").fields();
                 while (jsonNodeDatabaseOptions.hasNext()) {
                     Map.Entry<String, JsonNode> entry = jsonNodeDatabaseOptions.next();
-                    while (entry.getValue().fields().hasNext()) {
-                        Map.Entry<String, JsonNode> entryValues = entry.getValue().fields().next();
-                        RegistryAPI.sendLog(TextFormat.AQUA, "Key: " + entryValues.getKey() + "Value: " + entryValues.getValue().asText());
+                    Iterator<Map.Entry<String, JsonNode>> iter = entry.getValue().fields();
+                    options.clear();
+                    while (iter.hasNext()) {
+                        Map.Entry<String, JsonNode> entryValues = iter.next();
                         if (entryValues.getKey().equals("password")) {
                             options.put("password", entryValues.getValue().asText());
                         }
@@ -126,14 +127,7 @@ public class SettingsAPI {
                         }
                     }
                     databaseOptions.put(entry.getKey(), options);
-                    options.clear();
                 }
-
-                databaseOptions.forEach( (s, d) -> {
-                    d.forEach( (p, r) -> {
-                        RegistryAPI.sendLog(TextFormat.ORANGE, "Name: " + s + "Data: " + p + " " + r);
-                    });
-                });
 
                 Iterator<Map.Entry<String, JsonNode>> jsonNodeMessages = rootNode.get("messages").fields();
                 while (jsonNodeMessages.hasNext()) {

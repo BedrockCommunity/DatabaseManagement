@@ -1,5 +1,8 @@
 {
-  "countDatabases" : 2,
+  "countDatabases" : {
+    "MySQL" : 1,
+    "SQLITE3" : 1
+  },
   "typeDatabase" : {
     "1" : "SQLITE3",
     "2" : "MySQL"
